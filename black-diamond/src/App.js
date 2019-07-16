@@ -36,9 +36,12 @@ class App extends Component {
   }
   navigate(location) {
     if (location === "cart") {
-      this.state.showCart = true;
-    } else {
-      this.state.showCart = false;
+      this.setState({
+        showCart: true
+      })
+      this.setState({
+        showCart: false
+      })
     }
   }
   render() {
@@ -50,8 +53,8 @@ class App extends Component {
           {showCart ? (
             <ShoppingCart cart={cart} removeFromCart={this.removeFromCart} />
           ) : (
-            <StoreFront products={products} addToCart={this.addToCart} />
-          )}
+              <StoreFront products={products} addToCart={this.addToCart} />
+            )}
         </div>
       </div>
     );
